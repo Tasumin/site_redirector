@@ -88,8 +88,6 @@ You can now access:
 - `http://go.example.com/wiki`
 - etc.
 
-> ⚠️ Paths are exact matches only. Want wildcard or fallback support? Ask for an enhancement!
-
 ---
 
 ## 📦 Output

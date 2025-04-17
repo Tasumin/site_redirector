@@ -2,12 +2,14 @@
 
 exports.handler = async (event) => {
     const request = event.Records[0].cf.request;
-    const uri = request.uri.replace(/^\//, '');
+    const uri = request.uri.replace(/^\//, '').toLowerCase();
 
     const redirects = {
         "servicedesk": "https://subdomain.domain.com/servicedesk/portal",
         "status": "https://status.domain.com",
-        "help": "https://support.domain.com/helpdesk"
+        "help": "https://support.domain.com/helpdesk",
+        "jira": "https://jira.domain.com",
+        "wiki": "https://wiki.domain.com"
     };
 
     if (redirects[uri]) {
