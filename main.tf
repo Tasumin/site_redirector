@@ -60,6 +60,8 @@ resource "aws_cloudfront_distribution" "redirect_dist" {
     cloudfront_default_certificate = true
   }
 
+  aliases = [var.custom_domain]
+
   restrictions {
     geo_restriction {
       restriction_type = "none"
