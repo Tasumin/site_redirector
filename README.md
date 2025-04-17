@@ -59,23 +59,36 @@ CloudFront will now respond to `http://go.example.com`.
 
 ---
 
-## 🔁 Configure Redirects
+## 🔁 Configure Custom Redirects
 
-Edit `redirect.js`:
+To add or change redirects:
+
+1. Open the `redirect.js` file in this project.
+
+2. Modify the `redirects` object inside the Lambda handler. For example:
 
 ```js
 const redirects = {
     "servicedesk": "https://subdomain.domain.com/servicedesk/portal",
     "status": "https://status.domain.com",
-    "help": "https://support.domain.com/helpdesk"
+    "help": "https://support.domain.com/helpdesk",
+    "jira": "https://jira.domain.com",
+    "wiki": "https://wiki.domain.com"
 };
 ```
 
-Re-deploy:
+3. Save the file and re-deploy:
 
 ```bash
 terraform apply
 ```
+
+You can now access:
+- `http://go.example.com/jira`
+- `http://go.example.com/wiki`
+- etc.
+
+> ⚠️ Paths are exact matches only. Want wildcard or fallback support? Ask for an enhancement!
 
 ---
 
